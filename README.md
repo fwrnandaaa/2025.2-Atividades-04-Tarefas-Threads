@@ -24,10 +24,24 @@ Esta atividade prática tem como objetivo demonstrar o comportamento de threads 
 ├── atividade_threads.c  # Código-fonte principal do programa
 ├── Makefile             # Arquivo para compilação automatizada
 ├── Dockerfile           # Configuração do container Fedora
+├── executar.sh          # Script auxiliar para execução
+├── RELATORIO.md         # Template para relatório da atividade
 └── README.md            # Este arquivo
 ```
 
 ## 🚀 Como Executar
+
+### Método Rápido: Script Auxiliar (Recomendado para Iniciantes)
+
+Execute o script auxiliar que guiará você pelo processo:
+
+```bash
+./executar.sh
+```
+
+O script oferece opções para:
+1. Executar localmente (se você tiver GCC e Make instalados)
+2. Executar com Docker (se você tiver Docker instalado)
 
 ### Método 1: Executar Localmente (sem Docker)
 
@@ -79,6 +93,23 @@ Dentro do container, você pode executar:
 ```bash
 ./atividade_threads
 ```
+
+**Nota sobre problemas de SSL:** Se encontrar erros relacionados a certificados SSL durante o build do Docker, isso é comum em alguns ambientes de CI/CD. Nesse caso, use o Método 1 (execução local) ou tente executar em sua máquina pessoal.
+
+## 📝 Elaboração do Relatório
+
+Após executar o programa, utilize o arquivo `RELATORIO.md` como template para documentar suas observações:
+
+1. Faça uma cópia do arquivo:
+```bash
+cp RELATORIO.md MEU_RELATORIO.md
+```
+
+2. Preencha as seções com suas observações e análises
+
+3. Execute o programa múltiplas vezes para comparar resultados
+
+4. Responda às questões propostas com base nas suas observações
 
 ## 🔍 O Que Observar
 
