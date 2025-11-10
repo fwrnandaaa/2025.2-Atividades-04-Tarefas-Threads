@@ -1,18 +1,20 @@
 # Relatório de Observações - Atividade de Threads
 
 ## Informações do Aluno
-- **Nome:** _[Seu nome aqui]_
-- **Matrícula:** _[Sua matrícula aqui]_
-- **Data:** _[Data da execução]_
+- **Nome:** Fernanda Dantas do nascimento
+- **Matrícula:** 20242014040031
+- **Data:** 21/01/2025
 
 ## Ambiente de Execução
 
-- [ ] Executado localmente
-- [ ] Executado em Docker/Fedora
+- [X] Executado localmente
+- [] Executado em Docker/Fedora
 
-**Sistema Operacional:** _[Ex: Ubuntu 22.04, Fedora 40, etc.]_  
-**Processador:** _[Ex: Intel Core i5, AMD Ryzen, etc.]_  
-**Número de Cores:** _[Ex: 4 cores, 8 threads]_
+**Sistema Operacional:** Windows 11 
+
+**Processador:** AMD Ryzen 5  
+
+**Número de Cores:** 4
 
 ---
 
@@ -21,51 +23,51 @@
 ### Resultados Observados
 
 **Thread CPU (Thread 1):**
-- Tempo de execução: _______ segundos
-- Soma dos primos: _______
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.43 segundos
+- Soma dos primos: 37550402023
+- Ordem de conclusão:  3ª
 
 **Thread I/O (Thread 2):**
-- Tempo de execução: _______ segundos
-- Linhas processadas: _______
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.14 segundos
+- Linhas processadas: 10000
+- Ordem de conclusão: 2ª
 
 **Thread Mista (Thread 3):**
-- Tempo de execução: _______ segundos
-- Total de cálculos: _______
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.05 segundos
+- Total de cálculos: 3482527859448382464
+- Ordem de conclusão: 1ª
 
-**Tempo Total do Programa:** _______ segundos
+**Tempo Total do Programa:** <1 segundo
 
 ### Observações sobre a Saída
 
 Descreva como as mensagens das threads apareceram no console:
 
-_[Ex: As mensagens das três threads apareceram intercaladas, mostrando que estavam executando simultaneamente...]_
+As mensagens das três threads apareceram intercaladas no console, mostrando que estavam executando simultaneamente. As threads começaram juntas, cada uma realizando suas operações específicas (CPU, I/O e mista), e suas mensagens de progresso e conclusão foram exibidas em ordem variada.
 
 ---
 
-## Execução 2 (Repetir para comparação)
+## Execução 2 (Com Docker)
 
 ### Resultados Observados
 
 **Thread CPU (Thread 1):**
-- Tempo de execução: _______ segundos
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.42 segundos
+- Ordem de conclusão: 3ª
 
 **Thread I/O (Thread 2):**
-- Tempo de execução: _______ segundos
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.01 segundo
+- Ordem de conclusão: 1ª
 
 **Thread Mista (Thread 3):**
-- Tempo de execução: _______ segundos
-- Ordem de conclusão: _______ (1ª, 2ª ou 3ª)
+- Tempo de execução: 0.03 segundos
+- Ordem de conclusão: 2ª
 
-**Tempo Total do Programa:** _______ segundos
+**Tempo Total do Programa:** <1 segundo
 
 ### Diferenças entre Execuções
 
-_[Descreva se houve diferenças nos tempos ou na ordem de conclusão das threads]_
+Houve pequenas diferenças nos tempos de execução de cada thread, principalmente nas threads de I/O e mista, que terminaram mais rapidamente na execução com Docker.
 
 ---
 
@@ -73,74 +75,21 @@ _[Descreva se houve diferenças nos tempos ou na ordem de conclusão das threads
 
 ### 1. Qual thread terminou primeiro? Por quê?
 
-_[Sua resposta aqui - considere o tipo de operação: CPU, I/O ou mista]_
+A thread I/O e a mista terminaram primeiro, pois elas executam tarefas mais rápidas e menos intensivas que a de CPU.
 
 ### 2. Por que os tempos de execução variam entre diferentes execuções?
 
-_[Sua resposta aqui - pense no escalonamento de threads, carga do sistema, etc.]_
+Isso ocorre por causa do escalonamento e prioridades do sistema operacional, além da carga momentânea do computador.
 
 ### 3. Como o sistema operacional gerencia a execução das threads?
 
-_[Sua resposta aqui - considere conceitos de escalonamento, time-sharing, etc.]_
+O sistema operacional usa escalonamento e time-sharing para alternar rapidamente entre as threads, permitindo que todas pareçam rodar ao mesmo tempo. Ele decide qual thread executa em cada núcleo do processador, trocando entre elas em intervalos curtos para garantir que compartilhem os recursos de forma justa e eficiente.
 
 ### 4. Qual seria o impacto de aumentar o número de threads?
 
-_[Sua resposta aqui - pense em paralelismo vs. overhead]_
+Aumentar o número de threads pode melhorar o paralelismo, pois mais tarefas são executadas ao mesmo tempo, aproveitando os núcleos do processador. Porém, se houver threads demais, o sistema operacional precisa escalonar e alternar entre elas, gerando overhead.
 
 ### 5. O que aconteceria se executássemos as mesmas operações sequencialmente?
 
-_[Sua resposta aqui - compare execução paralela vs. sequencial]_
+Não haveria concorrência nem paralelismo, pois cada tarefa só começaria quando a anterior terminasse. O tempo total seria maior e as saídas apareceriam em ordem fixa, sem intercalamento das mensagens das threads.
 
----
-
-## Experimentos Adicionais (Opcional)
-
-### Modificação 1: Aumentar NUM_ITERACOES
-
-**Alteração realizada:** _[Ex: Mudei NUM_ITERACOES de 1000000 para 5000000]_
-
-**Resultado observado:**
-- Tempo da Thread CPU: _______ segundos
-- Impacto no tempo total: _______
-
-**Conclusão:** _[O que você aprendeu com essa modificação?]_
-
-### Modificação 2: Adicionar mais threads
-
-**Alteração realizada:** _[Ex: Criei 3 threads CPU adicionais]_
-
-**Resultado observado:**
-- Comportamento: _______
-- Impacto na performance: _______
-
-**Conclusão:** _[O que você aprendeu com essa modificação?]_
-
----
-
-## Conceitos Aprendidos
-
-Liste os principais conceitos de sistemas operacionais que você compreendeu melhor com esta atividade:
-
-1. _[Ex: Concorrência e paralelismo]_
-2. _[Ex: Diferença entre operações CPU-bound e I/O-bound]_
-3. _[Ex: Uso da biblioteca pthread]_
-4. _[...]_
-
----
-
-## Dificuldades Encontradas
-
-Descreva quaisquer problemas que enfrentou durante a atividade e como os resolveu:
-
-_[Sua resposta aqui]_
-
----
-
-## Comentários Finais
-
-_[Espaço para observações adicionais, sugestões ou comentários sobre a atividade]_
-
----
-
-**Data de Conclusão:** _[Data]_  
-**Assinatura:** _[Seu nome]_
