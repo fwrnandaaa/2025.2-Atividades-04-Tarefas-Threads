@@ -1,9 +1,9 @@
 # Relatório de Observações - Atividade de Threads
 
 ## Informações do Aluno
-- **Nome:** Fernanda Dantas do nascimento
+- **Nome:** Fernanda Dantas do Nascimento
 - **Matrícula:** 20242014040031
-- **Data:** 21/01/2025
+- **Data:** 10/11/2025
 
 ## Ambiente de Execução
 
